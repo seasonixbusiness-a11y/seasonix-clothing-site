@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seasonix Clothing — Style for Every Season</title>
+<meta name="description" content="Thrifted, hand-picked streetwear from Dhaka. Style for every season.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="#" class="wordmark">SEASONIX<span>.</span></a>
+    <nav class="topnav">
+      <a href="#rack">The Rack</a>
+      <a href="#about">About</a>
+      <a href="https://instagram.com/seasonix.clothing" target="_blank" rel="noopener">Instagram ↗</a>
+    </nav>
+    <button class="cart-btn" id="cartToggle" aria-label="Open cart">
+      <span class="cart-icon">🧺</span>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-noise" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="eyebrow-stamp">DHAKA, BD &nbsp;·&nbsp; THRIFTED &amp; HAND-PICKED</p>
+    <h1 class="hero-title">
+      STYLE FOR<br>EVERY <span class="hero-title-outline">SEASON</span>
+    </h1>
+    <p class="hero-sub">Every piece pulled from New Market, cleaned up, tagged, and priced honest. No guessing games — the price is always right there on the tag.</p>
+    <div class="hero-ctas">
+      <a href="#rack" class="btn btn-primary">Shop the Rack</a>
+      <a href="https://instagram.com/seasonix.clothing" target="_blank" rel="noopener" class="btn btn-ghost">Find us on IG</a>
+    </div>
+  </div>
+  <div class="hero-tag" aria-hidden="true">
+    <div class="hero-tag-hole"></div>
+    <span>EST.<br>2026</span>
+  </div>
+</section>
+
+<!-- ===== FILTER BAR ===== -->
+<section class="rack-head" id="rack">
+  <h2 class="section-title">THE RACK</h2>
+  <div class="filters" id="filters">
+    <button class="filter-chip active" data-filter="all">All</button>
+    <button class="filter-chip" data-filter="shirt">Shirts</button>
+    <button class="filter-chip" data-filter="quarterzip">Quarter-zips</button>
+  </div>
+</section>
+
+<!-- ===== PRODUCT GRID ===== -->
+<section class="grid" id="productGrid"></section>
+
+<!-- ===== ABOUT / STRIP ===== -->
+<section class="about-strip" id="about">
+  <div class="about-inner">
+    <div class="about-block">
+      <p class="about-num">01</p>
+      <h3>Hand-picked, not mass-picked</h3>
+      <p>Every piece is sourced one at a time from New Market, Dhaka — checked for damage, washed, and only listed if it's actually good.</p>
+    </div>
+    <div class="about-block">
+      <p class="about-num">02</p>
+      <h3>Prices on the tag. Always.</h3>
+      <p>No "DM for price." What you see is what you pay — delivery calculated at checkout, nationwide across Bangladesh.</p>
+    </div>
+    <div class="about-block">
+      <p class="about-num">03</p>
+      <h3>One of one, mostly</h3>
+      <p>Thrifted stock means limited sizes and quantities. If it's in your cart, grab it — it might not restock.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p class="wordmark footer-word">SEASONIX<span>.</span></p>
+      <p class="footer-tag">Style for every season.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://instagram.com/seasonix.clothing" target="_blank" rel="noopener">Instagram</a>
+      <a href="#rack">The Rack</a>
+      <a href="#about">About</a>
+    </div>
+    <p class="footer-meta">Dhaka, Bangladesh · Nationwide delivery · Orders confirmed over WhatsApp/DM</p>
+  </div>
+</footer>
+
+<!-- ===== CART DRAWER ===== -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="receipt">
+    <div class="receipt-head">
+      <p class="receipt-store">SEASONIX CLOTHING</p>
+      <p class="receipt-sub">DHAKA, BD &nbsp;·&nbsp; ORDER RECEIPT</p>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">✕</button>
+    </div>
+    <div class="receipt-dash"></div>
+    <div class="receipt-items" id="receiptItems">
+      <p class="empty-cart">Your basket's empty. Go grab something off the rack.</p>
+    </div>
+    <div class="receipt-dash"></div>
+    <div class="receipt-total-row">
+      <span>SUBTOTAL</span>
+      <span id="receiptSubtotal">৳0</span>
+    </div>
+    <div class="receipt-total-row">
+      <span>DELIVERY</span>
+      <span id="receiptDelivery">—</span>
+    </div>
+    <div class="receipt-dash"></div>
+    <div class="receipt-total-row receipt-grand">
+      <span>TOTAL</span>
+      <span id="receiptTotal">৳0</span>
+    </div>
+    <form class="checkout-form" id="checkoutForm">
+      <label>
+        Full name
+        <input type="text" id="custName" required placeholder="Your name">
+      </label>
+      <label>
+        Phone number
+        <input type="tel" id="custPhone" required placeholder="01XXXXXXXXX">
+      </label>
+      <label>
+        Delivery address
+        <textarea id="custAddress" required placeholder="Area, city"></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary btn-checkout" id="checkoutBtn">Copy Order &amp; Message Us</button>
+      <p class="checkout-note">This copies your order and opens our Instagram DMs — just paste it in and send. We'll confirm payment (bKash/COD) there. No card details, no accounts.</p>
+    </form>
+  </div>
+</aside>
+
+<script src="products.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
